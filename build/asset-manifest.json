@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0c750004.css",
+    "main.js": "/static/js/main.e2b60800.js",
+    "static/js/592.7b82f280.chunk.js": "/static/js/592.7b82f280.chunk.js",
+    "static/media/background1.jpg": "/static/media/background1.95f2722159ff65deb079.jpg",
+    "static/media/Pokemon-Trading-Cards-Game.avif": "/static/media/Pokemon-Trading-Cards-Game.4144a7b277da2dfb1952.avif",
+    "index.html": "/index.html",
+    "main.0c750004.css.map": "/static/css/main.0c750004.css.map",
+    "main.e2b60800.js.map": "/static/js/main.e2b60800.js.map",
+    "592.7b82f280.chunk.js.map": "/static/js/592.7b82f280.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c750004.css",
+    "static/js/main.e2b60800.js"
+  ]
+}
