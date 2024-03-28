@@ -2,18 +2,17 @@ import pokemonHeader from '../Images/Pokemon-Trading-Cards-Game.avif';
 import '../Style/ListPokemon.css';
 import { RiArrowLeftSLine, RiArrowRightSLine, RiSearchLine } from 'react-icons/ri';
 import React, { useEffect, useState } from 'react';
-import { fetching, fetchingPokemon } from '../Service/readPokemon';
-import { useQuery, useQueryClient } from 'react-query';
+import { fetching } from '../Service/readPokemon';
+import { useQueryClient } from 'react-query';
 import Card from "./Card";
-import { PiCaretCircleLeftDuotone, PiCaretCircleRightDuotone } from 'react-icons/pi';
 
 function ListPokemon() {
     const [pokeData, setPokeData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0/");
-    const [pokeDex, setPokeDex] = useState();
+    const [, setPokeDex] = useState();
     const [searchPoke, setSearchPoke] = useState('')
-    const [filterPoke, setFilterPoke] = useState([])
+    const [filterPoke, ] = useState([])
     const queryClient = useQueryClient();
     const [hoveredPrev, setHoveredPrev] = useState(false)
     const [hoveredNext, setHoveredNext] = useState(false)
@@ -37,10 +36,6 @@ function ListPokemon() {
             setLoading(false);
         }
     };
-
-    const { isLoading, error } = useQuery(["pokemonData"], fetchPokemonData, {
-    });
-
 
     const handleSearch = async () => {
         if (searchPoke) {
@@ -80,11 +75,7 @@ function ListPokemon() {
     }
 
     useEffect(() => {
-        const fetchData = async () => {
-            await fetchPokemonData();
-        };
-
-        fetchData();
+        fetchPokemonData()
     }, [url]);
     return (
         <div className="App" style={{ overflow: 'hidden' }}>

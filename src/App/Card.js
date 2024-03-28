@@ -35,7 +35,6 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
                                 margin: '10px',
                                 textAlign: 'center',
                                 cursor: 'pointer',
-                                cursor: 'pointer',
                                 transition: 'transform 0.3s',
                                 transform: selectedCardId === item.id ? 'scale(1.1)' : 'scale(1)',
                                 imageRendering: 'pixelated'

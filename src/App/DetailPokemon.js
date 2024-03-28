@@ -3,7 +3,6 @@ import background1 from '../Images/background1.jpg';
 import '../Style/ListPokemon.css';
 import { PiCaretCircleLeftDuotone, PiCaretCircleRightDuotone } from 'react-icons/pi';
 import { fetching } from '../Service/readPokemon';
-import { useQuery } from 'react-query';
 
 function DetailPokemon() {
     const storedItem = localStorage.getItem('selectedPokemon');
@@ -36,6 +35,7 @@ function DetailPokemon() {
                     throw new Error('Failed to fetch previous Pokemon');
                 }
                 const prevPoke = await response.json();
+                console.log('prevPoke :', prevPoke);
             } catch (error) {
                 console.error("Error fetching previous Pokemon data:", error);
             }
@@ -52,9 +52,6 @@ function DetailPokemon() {
             console.error("Error fetching next Pokemon data:", error);
         }
     };
-    const { data: abilityData, isLoading: abilityIsLoading, error: abilityError } = useQuery(["pokemonAbility"], fetchAbility);
-    const { data: prevPokemonData, isLoading: prevPokemonIsLoading, error: prevPokemonError } = useQuery(["prevPokemon"], fetchPrevPokemon);
-    const { data: nextPokemonData, isLoading: nextPokemonIsLoading, error: nextPokemonError } = useQuery(["nextPokemon"], fetchNextPokemon);
 
     const ability1 = selectedPokemon?.abilities?.[0]?.ability?.name;
     const ability2 = selectedPokemon?.abilities?.[1]?.ability?.name;
